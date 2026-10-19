@@ -1,0 +1,26 @@
+<!doctype html>
+<html lang="en"><head><meta charset="utf-8"><meta name="viewport" content="width=device-width,initial-scale=1">
+<title>SYNAPSE · Recorded neural experience</title><style>__REPLAY_CSS__</style></head>
+<body><main>
+<div class="topline"><div><span class="eyebrow">SYNAPSE / OBSERVE</span><h1>Follow one experience.</h1></div><span id="identity" class="badge"></span></div>
+<p class="intro">Watch the input enter, signals travel, an action happen, and feedback change eligible connections.</p>
+<div class="story" aria-live="polite">
+ <section id="inputCard"><span id="inputLabel" class="step">01 · INPUT</span><div id="cue" class="big">Waiting</div><p id="inputText">Calculate an experience with Step 1.</p></section>
+ <section id="actionCard"><span id="actionLabel" class="step">02 · CIRCUIT CHOICE</span><div class="pads"><div id="pad0">Button 0</div><div id="pad1">Button 1</div></div><p id="actionText">Outcome is not used to choose the action.</p></section>
+ <section id="feedbackCard"><span id="feedbackLabel" class="step">03 · CONSEQUENCE</span><div id="outcome" class="big">Not yet</div><p id="feedbackText">Feedback follows the action.</p></section>
+</div>
+<div class="controls">
+ <button id="play" type="button">Pause replay</button><button id="restart" type="button">Replay from start</button>
+ <label>Speed <select id="speed"><option value=".5">0.5×</option><option value="1" selected>1×</option><option value="2">2×</option></select></label>
+ <label class="scrub">Recorded time <input id="time" type="range" min="0" max="100" step=".1" value="0"></label><output id="clock">0.0 ms</output>
+</div>
+<div class="phasebar"><strong id="phase"></strong><span id="change"></span></div>
+<div class="network"><canvas id="network" tabindex="0" aria-label="Animated network of 50 neurons and 690 directed connections; click a neuron for optional details"></canvas>
+ <div id="tooltip" class="tooltip" hidden></div>
+</div>
+<div class="legend"><span><i class="positive"></i>Positive connection</span><span><i class="negative"></i>Inhibitory connection</span><span><i class="packet"></i>Recorded spike / transmission</span><span><i class="gain"></i>Strengthened</span><span><i class="loss"></i>Weakened</span><span id="manualLegend"><i style="background:#e5bc6b"></i>Manual gain / grey dashed = blocked</span></div>
+<div class="bottom"><label><input id="focus" type="checkbox"> Focus the selected neuron’s links</label><button id="clear" type="button">Clear selection</button><span id="detail">All existing connections are visible automatically.</span></div>
+<p class="footnote" id="scope"></p>
+<details><summary>What am I watching?</summary><p>This is recorded activity from a calculated 100 ms experience, slowed down for inspection. Replay changes the display only. Use the app’s Step or Start controls to calculate new experiences. The task currently uses two cues and two buttons; the movement arena comes next.</p><p>The action readout compares actual neural voltages and includes exploration. Teaching feedback arrives at 35 ms. Links shown are existing connections: a strength change does not create a new link. Packets follow arrivals actually processed by the engine, including any signals carried into this window.</p><p>Neuron locations show engineered roles. Node brightness follows recorded voltage; flashes are brief display highlights after actual spikes. Link width shows magnitude with a display scale; inhibitory links are capped for readability.</p></details>
+</main><script id="replay-data" type="application/json">__REPLAY_DATA__</script>
+<script>__REPLAY_CORE__</script><script>__REPLAY_UI__</script></body></html>

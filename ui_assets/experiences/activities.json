@@ -1,0 +1,510 @@
+{
+  "pfc": {
+    "title": "Keep the rule",
+    "idea": "Helps you keep a goal in mind and ignore distractions.",
+    "invite": "Can you hold a rule while something else tries to grab your attention?",
+    "instruction": "Remember the rule, wait through the distraction, then choose the matching card.",
+    "tag": "Try a task yourself",
+    "accent": "#7256a7",
+    "wash": "#f0e8fc",
+    "icon": "◈",
+    "engine": "rule_task",
+    "settings": {
+      "delay": {
+        "value": 2,
+        "min": 0,
+        "max": 8,
+        "step": 1
+      },
+      "distractions": {
+        "value": 2,
+        "min": 0,
+        "max": 5,
+        "step": 1
+      },
+      "rule": {
+        "value": "colour",
+        "choices": [
+          "colour",
+          "shape"
+        ]
+      }
+    },
+    "why": [
+      "You need to keep the rule available while the original instruction is out of sight.",
+      "A distracting card competes for attention. Keeping the goal and selecting a response involve prefrontal interactions with other networks.",
+      "Your answer is a task response, not a measurement of your prefrontal activity."
+    ],
+    "try_next": "Try the same rule with no distraction, then add distraction. Change one setting at a time.",
+    "depth": "Delay-related activity in some prefrontal neurons supports studying how goals remain available. Recurrent excitation, inhibition and synaptic dynamics can contribute; no single cell is the whole plan.",
+    "scope": "A short human task; no brain activity or cognitive capacity is measured.",
+    "sources": [
+      "pfc_cells",
+      "human_wm"
+    ]
+  },
+  "occipital": {
+    "title": "Find the edge",
+    "idea": "Helps turn visual input into useful features such as edges and orientation.",
+    "invite": "Make a drawing and see which simple visual filter responds.",
+    "instruction": "Click the pixels. Compare a vertical edge, a horizontal edge and a uniform patch.",
+    "tag": "Explore a visual model",
+    "accent": "#ae5d30",
+    "wash": "#fff0da",
+    "icon": "▥",
+    "engine": "edge_filters",
+    "settings": {
+      "contrast": {
+        "value": 1,
+        "min": 0,
+        "max": 1,
+        "step": 0.1
+      },
+      "noise": {
+        "value": 0,
+        "min": 0,
+        "max": 0.5,
+        "step": 0.1
+      }
+    },
+    "why": [
+      "Each filter combines nearby bright and dark pixels differently.",
+      "Changing an edge's orientation changes which filter responds most. A uniform bright patch can give a smaller edge response than a boundary.",
+      "These are hand-set filters, not a simulation of a retina or a learned visual cortex."
+    ],
+    "try_next": "Keep the pixels fixed and lower contrast. Does the preferred orientation change, or just the response size?",
+    "depth": "Real V1 populations have receptive fields and orientation selectivity shaped by many interacting inputs. Retinal, thalamic, local cortical and feedback processing precede or contribute to visual interpretation.",
+    "scope": "A simplified feature-filter model; it does not recognise arbitrary objects.",
+    "sources": [
+      "visual_fields",
+      "visual_streams"
+    ]
+  },
+  "cerebellum": {
+    "title": "Adjust the reach",
+    "idea": "Helps fine-tune actions when the result differs from what was expected.",
+    "invite": "The cursor has been shifted. Can repeated error help the model compensate?",
+    "instruction": "Make a reach, repeat it, then remove the shift without resetting the learned compensation.",
+    "tag": "Explore adaptation",
+    "accent": "#15817b",
+    "wash": "#e1f6ee",
+    "icon": "◎",
+    "engine": "reach_adaptation",
+    "settings": {
+      "shift": {
+        "value": 60,
+        "min": -100,
+        "max": 100,
+        "step": 10
+      },
+      "learning": {
+        "value": 0.35,
+        "min": 0,
+        "max": 1,
+        "step": 0.05
+      }
+    },
+    "why": [
+      "The visible error is the difference between the cursor endpoint and the target.",
+      "The model changes a compensating command after each reach. With learning enabled, the same shift produces less error over repeated trials.",
+      "Remove the shift: retained compensation can produce an error in the opposite direction, an aftereffect in this model."
+    ],
+    "try_next": "Set learning to zero and repeat the same shift. Compare with a fresh run with learning enabled.",
+    "depth": "Human reaching experiments connect cerebellar function with sensory prediction error and adaptation. Real mossy, parallel, climbing-fibre and Purkinje-cell circuits are much richer than this scalar update.",
+    "scope": "An error-based adaptation analogy, not a Purkinje-cell or muscle simulation.",
+    "sources": [
+      "reach_adaptation",
+      "cerebellar_cells",
+      "cerebellar_outputs"
+    ]
+  },
+  "temporal": {
+    "title": "Recognise a changed shape",
+    "idea": "Helps connect visual features with what an object is.",
+    "invite": "Teach two different drawings, then test an edited version without giving the answer.",
+    "instruction": "Edit Example 1 and Example 2 independently. Teach them, draw a test input, and ask the frozen circuit.",
+    "tag": "Teach a 100-cell circuit",
+    "accent": "#b0547a",
+    "wash": "#fde7ef",
+    "icon": "▧",
+    "engine": "neural_recognition",
+    "settings": {},
+    "why": [
+      "Teaching changes the circuit's readout weights using labelled examples.",
+      "The test sends only the drawn pixels and learned weights to the circuit. It does not send the expected class.",
+      "An edited input can change its response or make it undecided. Recognising taught shapes does not prove general object understanding."
+    ],
+    "try_next": "Flip one test pixel without teaching again. Then try two pixels. Which change alters the response?",
+    "depth": "Ventral visual pathways contribute object-related representations. The experiment uses a fixed spiking encoder and supervised readout, not the full temporal cortex or biologically learned visual invariance.",
+    "scope": "Real 100-cell model outputs; the cell groups are engineering roles, not brain regions.",
+    "sources": [
+      "visual_streams",
+      "what_where"
+    ]
+  },
+  "parietal": {
+    "title": "Move the spotlight",
+    "idea": "Helps select locations and relate sensory information to action.",
+    "invite": "The scene stays the same. Can moving attention change which location wins?",
+    "instruction": "Click a location to move the model spotlight. Watch the selected location and weighted evidence.",
+    "tag": "Explore spatial selection",
+    "accent": "#4372a9",
+    "wash": "#e6efff",
+    "icon": "⌖",
+    "engine": "spatial_spotlight",
+    "settings": {
+      "width": {
+        "value": 0.9,
+        "min": 0.4,
+        "max": 2.5,
+        "step": 0.1
+      },
+      "gain": {
+        "value": 3,
+        "min": 0,
+        "max": 5,
+        "step": 0.5
+      }
+    },
+    "why": [
+      "Every location still has the same sensory input.",
+      "The spotlight changes the weight given to nearby locations. A previously losing location can become the strongest weighted signal.",
+      "Changing selection is different from deleting input. This is not a simulation of clinical neglect."
+    ],
+    "try_next": "Set attention gain to zero. Does moving the spotlight still change the selected location?",
+    "depth": "Posterior parietal and frontal networks participate in spatial selection and action-related transformations. A Gaussian gain field illustrates one computation, not their complete physiology.",
+    "scope": "A spatial-weighting model with fixed input, not a diagnostic attention test.",
+    "sources": [
+      "parietal",
+      "parietal_human"
+    ]
+  },
+  "hippocampus": {
+    "title": "Remember what went where",
+    "idea": "Helps form links between an event, its place and its context.",
+    "invite": "Link two cues with two places, then retrieve the place from the cue alone.",
+    "instruction": "Give each editable cue a place. Teach the pair, then query a cue without supplying its place.",
+    "tag": "Explore an association",
+    "accent": "#827149",
+    "wash": "#f5f0dc",
+    "icon": "◇",
+    "engine": "neural_association",
+    "settings": {
+      "placeA": {
+        "value": "Window",
+        "choices": [
+          "Window",
+          "Door"
+        ]
+      },
+      "placeB": {
+        "value": "Door",
+        "choices": [
+          "Window",
+          "Door"
+        ]
+      }
+    },
+    "why": [
+      "During teaching, a cue is paired with a place label. Later, the query contains only the cue pixels.",
+      "The receiving population's voltage chooses a learned response, which is then displayed as its taught place.",
+      "Change the place assignments and teach again to explore interference. This is a readout association, not episodic recollection or hippocampal pattern completion."
+    ],
+    "try_next": "Swap the two places and teach again. Compare the same cue before and after the new association.",
+    "depth": "Medial-temporal networks help form certain new memories. Dentate gyrus, CA3, CA1 and entorhinal pathways have distinct roles; this fixed-encoder readout does not reproduce those circuits.",
+    "scope": "A cue–place learning analogy using the 100-cell circuit; no human memory is measured.",
+    "sources": [
+      "memory",
+      "hippocampal_circuit",
+      "nmda"
+    ]
+  },
+  "basal": {
+    "title": "Learn which action pays",
+    "idea": "Helps shape action selection through connected learning and control loops.",
+    "invite": "Try two actions. Change their outcomes and watch the model adapt its preference.",
+    "instruction": "Choose an action or let the model take a small batch of turns. Then reverse the outcomes.",
+    "tag": "Explore action learning",
+    "accent": "#856f1d",
+    "wash": "#fff5cb",
+    "icon": "⇄",
+    "engine": "action_values",
+    "settings": {
+      "rewardA": {
+        "value": 1,
+        "min": 0,
+        "max": 1,
+        "step": 0.1
+      },
+      "rewardB": {
+        "value": 0,
+        "min": 0,
+        "max": 1,
+        "step": 0.1
+      },
+      "learning": {
+        "value": 0.3,
+        "min": 0,
+        "max": 1,
+        "step": 0.1
+      }
+    },
+    "why": [
+      "Each chosen action has an expected outcome, shown by its learned value.",
+      "Only the chosen action is updated using outcome minus expectation. A surprising outcome changes that value more than an expected one.",
+      "Basal-ganglia learning includes dopamine-related and inhibitory circuit mechanisms. These two values are an abstract model, not dopamine concentrations."
+    ],
+    "try_next": "Reverse Action 1 and Action 2 outcomes while retaining learned values. Watch how earlier learning influences the next choices.",
+    "depth": "Cortico-striato-thalamo-cortical loops combine excitation, inhibition and modulation. Direct/indirect pathway summaries help trace signs, but they are not a complete action-selection theory.",
+    "scope": "An action-value model; a preference is not a probability of human behaviour.",
+    "sources": [
+      "bg_inputs",
+      "bg_circuit",
+      "reward",
+      "prediction_error"
+    ]
+  },
+  "motor": {
+    "title": "Combine direction signals",
+    "idea": "Helps send movement-related commands through descending pathways.",
+    "invite": "Several direction-tuned model populations can combine into one movement vector.",
+    "instruction": "Choose a command direction. Reduce one population and compare the resulting movement arrow.",
+    "tag": "Explore population coding",
+    "accent": "#ac5b47",
+    "wash": "#ffe9dc",
+    "icon": "↗",
+    "engine": "population_vector",
+    "settings": {
+      "angle": {
+        "value": 45,
+        "min": 0,
+        "max": 315,
+        "step": 15
+      },
+      "strength": {
+        "value": 1,
+        "min": 0,
+        "max": 1,
+        "step": 0.1
+      },
+      "suppressed": {
+        "value": "none",
+        "choices": [
+          "none",
+          "0",
+          "45",
+          "90",
+          "135",
+          "180",
+          "225",
+          "270",
+          "315"
+        ]
+      }
+    },
+    "why": [
+      "Each model population prefers a different direction.",
+      "Their weighted vectors add together. Reducing an active contributor can change the size and direction of the combined vector.",
+      "Real motor output also depends on muscles, spinal circuits, posture and feedback. A population vector is one useful model, not the whole motor code."
+    ],
+    "try_next": "Suppress a population near the command direction, then one facing away. Do both manipulations have the same effect?",
+    "depth": "Primate recordings motivated population-vector descriptions of directional activity. Individual cells and whole motor circuits also reflect variables beyond direction.",
+    "scope": "Eight idealised directional populations, not a muscle or corticospinal simulation.",
+    "sources": [
+      "population_coding",
+      "motor_cells",
+      "premotor"
+    ]
+  },
+  "thalamus": {
+    "title": "Let one signal through",
+    "idea": "Helps regulate information flow in connected relay circuits.",
+    "invite": "Two inputs arrive. Change the relay gains without changing those inputs.",
+    "instruction": "Set Channel 1 and Channel 2 independently. Open one route while reducing the other.",
+    "tag": "Explore selective relay",
+    "accent": "#387a90",
+    "wash": "#e0f4f8",
+    "icon": "⋈",
+    "engine": "selective_relay",
+    "settings": {
+      "inputA": {
+        "value": 0.8,
+        "min": 0,
+        "max": 1,
+        "step": 0.1
+      },
+      "inputB": {
+        "value": 0.8,
+        "min": 0,
+        "max": 1,
+        "step": 0.1
+      },
+      "gainA": {
+        "value": 1,
+        "min": 0,
+        "max": 1.5,
+        "step": 0.1
+      },
+      "gainB": {
+        "value": 0.2,
+        "min": 0,
+        "max": 1.5,
+        "step": 0.1
+      },
+      "inhibition": {
+        "value": 0.1,
+        "min": 0,
+        "max": 0.6,
+        "step": 0.05
+      }
+    },
+    "why": [
+      "Input and transmission are separate variables.",
+      "The model relays input multiplied by gain, reduced by inhibition. Different outputs can therefore follow the same incoming signals.",
+      "Biological thalamic nuclei receive driving, modulating and inhibitory inputs. A gain slider does not calculate attention or thalamic burst currents."
+    ],
+    "try_next": "Keep both incoming strengths equal and swap only the gains. Which stage changed the outgoing evidence?",
+    "depth": "Visual LGN and reticular activity can be modulated during attention in macaque tasks. Thalamic processing also depends on membrane state and connected cortical/brainstem inputs.",
+    "scope": "An explicit gated-current analogy, not measured human attention.",
+    "sources": [
+      "thalamic_relays",
+      "thalamic_attention"
+    ]
+  },
+  "amygdala": {
+    "title": "Give a cue a consequence",
+    "idea": "Helps connect learned significance with cues and responses.",
+    "invite": "A neutral cue predicts confetti. What happens when the expected event stops arriving?",
+    "instruction": "Pair a cue with an outcome, test it without teaching, then run unpaired presentations.",
+    "tag": "Explore cue learning",
+    "accent": "#ab5a4f",
+    "wash": "#ffe5e0",
+    "icon": "✧",
+    "engine": "cue_conditioning",
+    "settings": {
+      "outcomeA": {
+        "value": 1,
+        "min": 0,
+        "max": 1,
+        "step": 0.1
+      },
+      "outcomeB": {
+        "value": 0,
+        "min": 0,
+        "max": 1,
+        "step": 0.1
+      },
+      "learning": {
+        "value": 0.3,
+        "min": 0,
+        "max": 1,
+        "step": 0.1
+      }
+    },
+    "why": [
+      "The cue appears before the model receives an outcome. The expectation is read before the update.",
+      "Repeated pairings change the cue's learned expectation. Presenting it with no outcome reduces that expectation in this simple rule.",
+      "Unlike action learning, no choice earns the outcome here. Confetti is neutral: the experiment does not simulate emotion or fear."
+    ],
+    "try_next": "Teach Cue 1, then probe it with no update. Next run no-outcome presentations. A frozen probe and new teaching answer different questions.",
+    "depth": "Amygdala conditioning research concerns interacting nuclei and distributed plasticity. Reduced expectation in this scalar model does not reproduce all mechanisms of biological extinction.",
+    "scope": "Neutral cue association; no emotion, fear response or amygdala activity is measured.",
+    "sources": [
+      "amygdala_cells",
+      "amygdala_circuit"
+    ]
+  },
+  "hypothalamus": {
+    "title": "Keep an internal balance",
+    "idea": "Helps coordinate responses to the body's internal needs.",
+    "invite": "Disturb an internal state and see how feedback helps bring it towards a target.",
+    "instruction": "Change the outside condition. Compare feedback ON and OFF while watching the same internal state.",
+    "tag": "Explore negative feedback",
+    "accent": "#3c7f62",
+    "wash": "#e5f3df",
+    "icon": "◉",
+    "engine": "homeostasis",
+    "settings": {
+      "outside": {
+        "value": 80,
+        "min": 0,
+        "max": 100,
+        "step": 5
+      },
+      "target": {
+        "value": 50,
+        "min": 40,
+        "max": 60,
+        "step": 5
+      },
+      "gain": {
+        "value": 0.5,
+        "min": 0,
+        "max": 1,
+        "step": 0.1
+      },
+      "feedback": {
+        "value": "on",
+        "choices": [
+          "on",
+          "off"
+        ]
+      }
+    },
+    "why": [
+      "The outside condition pushes the model's internal state away from its target.",
+      "Feedback uses the difference from the target to adjust warming or cooling. Turn feedback off to see what the disturbance does without that response.",
+      "The units are arbitrary. This does not calculate human temperature, hormones or medical regulation."
+    ],
+    "try_next": "After settling in a warm environment, make the outside cold. Does the controller need the same response?",
+    "depth": "Different hypothalamic populations integrate physiological information and influence autonomic, endocrine and behavioural pathways. This small feedback controller illustrates an organising principle rather than those exact pathways.",
+    "scope": "An artificial internal-state controller in model units, not body temperature.",
+    "sources": [
+      "hypothalamus",
+      "thermoregulation"
+    ]
+  },
+  "brainstem": {
+    "title": "Generate a repeating rhythm",
+    "idea": "Contains circuits that support basic rhythms, state and communication pathways.",
+    "invite": "Can a small adapting unit generate repeated pulses without a new instruction each time?",
+    "instruction": "Run the rhythm, change its drive and recovery, then remove the drive.",
+    "tag": "Explore a rhythm model",
+    "accent": "#63728e",
+    "wash": "#e9edf7",
+    "icon": "≈",
+    "engine": "adapting_rhythm",
+    "settings": {
+      "drive": {
+        "value": 1,
+        "min": 0,
+        "max": 2,
+        "step": 0.1
+      },
+      "inhibition": {
+        "value": 0.7,
+        "min": 0,
+        "max": 2,
+        "step": 0.1
+      },
+      "recovery": {
+        "value": 0.15,
+        "min": 0.05,
+        "max": 0.4,
+        "step": 0.05
+      }
+    },
+    "why": [
+      "Drive raises the model unit towards a firing threshold.",
+      "A pulse resets it and increases a temporary brake. As that brake recovers, another pulse becomes possible.",
+      "Real brainstem rhythms involve specialised interacting populations and feedback. These pulses are not a breathing prescription or a complete respiratory model."
+    ],
+    "try_next": "Keep recovery fixed and reduce drive to zero. Then restore drive. Which component initiates the next pulse?",
+    "depth": "Medullary and pontine respiratory networks combine excitatory, inhibitory and modulatory influences. Sleep/wake and cranial pathways involve other connected nuclei, not one universal rhythm cell.",
+    "scope": "An adapting threshold-unit analogy in arbitrary time units, not human breathing.",
+    "sources": [
+      "respiration",
+      "arousal"
+    ]
+  }
+}

@@ -1,0 +1,71 @@
+{
+  "retrieved_utc": "2026-10-17",
+  "assets": [
+    {
+      "file": "brain_regions.png",
+      "title": "Brain \u2014 coloured lobes",
+      "creator": "Servier Medical Art / Les Laboratoires Servier",
+      "source_page": "https://smart.servier.com/smart_image/brain-area/",
+      "download": "https://smart.servier.com/wp-content/uploads/2016/10/cerveau_zones2.png",
+      "license": "CC BY 4.0",
+      "license_url": "https://creativecommons.org/licenses/by/4.0/",
+      "changes": "Original PNG unchanged. SYNAPSE adds interactive labels and approximate halos in a separate HTML/SVG overlay.",
+      "sha256": "d798f280b1ca6039151582c640f3df3303eef4502badb198c6cf91dd450a2d4f"
+    },
+    {
+      "file": "brain_medial.png",
+      "title": "Brain \u2014 sagittal section",
+      "creator": "Servier Medical Art / Les Laboratoires Servier",
+      "source_page": "https://smart.servier.com/smart_image/brain-sagittal/",
+      "download": "https://smart.servier.com/wp-content/uploads/2016/10/cerveau_06.png",
+      "license": "CC BY 4.0",
+      "license_url": "https://creativecommons.org/licenses/by/4.0/",
+      "changes": "Original PNG unchanged. SYNAPSE adds interactive labels and approximate halos in a separate HTML/SVG overlay.",
+      "sha256": "d6b1b1bf3a4d77ec24cfef560a8903723be2ecc680c1cdab353ea6c0ca1276c9"
+    },
+    {
+      "file": "brain_section.png",
+      "title": "Brain \u2014 coronal section",
+      "creator": "Servier Medical Art / Les Laboratoires Servier",
+      "source_page": "https://smart.servier.com/smart_image/brain-sagittal-overview/",
+      "download": "https://smart.servier.com/wp-content/uploads/2016/10/cerveau_07.png",
+      "license": "CC BY 4.0",
+      "license_url": "https://creativecommons.org/licenses/by/4.0/",
+      "changes": "Original PNG unchanged. SYNAPSE adds interactive labels and approximate halos in a separate HTML/SVG overlay.",
+      "sha256": "c51411a9f05f365810f83464673a66b207020ddb267662f3436668b3cc7c46dc"
+    },
+    {
+      "file": "hippocampus.png",
+      "title": "Brain \u2014 hippocampus",
+      "creator": "Servier Medical Art / Les Laboratoires Servier",
+      "source_page": "https://smart.servier.com/smart_image/hippocampus/",
+      "download": "https://smart.servier.com/wp-content/uploads/2016/10/hypocampe.png",
+      "license": "CC BY 4.0",
+      "license_url": "https://creativecommons.org/licenses/by/4.0/",
+      "changes": "Original PNG unchanged. SYNAPSE adds interactive labels and approximate halos in a separate HTML/SVG overlay.",
+      "sha256": "485bdf7c32dde63f6314cabdd3bc5d0650646c626d2409165a3e15bdd0c4460e"
+    },
+    {
+      "file": "synapse_detail.png",
+      "title": "Synapse",
+      "creator": "Servier Medical Art / Les Laboratoires Servier",
+      "source_page": "https://smart.servier.com/smart_image/smart-synapse-view/",
+      "download": "https://smart.servier.com/wp-content/uploads/2016/10/synapse_06.png",
+      "license": "CC BY 4.0",
+      "license_url": "https://creativecommons.org/licenses/by/4.0/",
+      "changes": "Original PNG unchanged. SYNAPSE adds interactive labels and approximate halos in a separate HTML/SVG overlay.",
+      "sha256": "40ae16e87e045e71a2271000c849fff457deee6dc7d8173e140daf256cc76e82"
+    },
+    {
+      "file": "neuron_complete.svg",
+      "title": "Complete neuron cell diagram",
+      "creator": "Mariana Ruiz Villarreal (LadyofHats)",
+      "source_page": "https://commons.wikimedia.org/wiki/File:Complete_neuron_cell_diagram_en.svg",
+      "download": "https://upload.wikimedia.org/wikipedia/commons/archive/a/a9/20130225023815%21Complete_neuron_cell_diagram_en.svg",
+      "license": "Public domain \u2014 released by author",
+      "license_url": "https://commons.wikimedia.org/wiki/File:Complete_neuron_cell_diagram_en.svg#General_information",
+      "changes": "Unchanged SVG. The app explains the PNS/CNS myelin distinction.",
+      "sha256": "45b997bb28ece2c9358e639a6d9b49d6b4094ddd42f86b71149c286f3b51f733"
+    }
+  ]
+}

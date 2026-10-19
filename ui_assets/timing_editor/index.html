@@ -1,0 +1,22 @@
+<!doctype html><html lang="en"><head><meta charset="utf-8"><meta name="viewport" content="width=device-width,initial-scale=1"><title>Set the relative timing</title><style>
+*{box-sizing:border-box}body{margin:0;font:14px/1.5 system-ui,Segoe UI,sans-serif;background:#101c25;color:#edf4f2}main{padding:14px 18px;border:1px solid #35505e;border-radius:14px}p{margin:0 0 4px;color:#526c75;font-size:13px}svg{width:100%;height:155px;display:block}svg text{font-family:system-ui,Segoe UI,sans-serif;fill:#b0c3ce;font-size:13px}#b-marker{cursor:grab;touch-action:none;outline:none}#b-marker:focus-visible circle{stroke:#fff;stroke-width:4}#status{color:#203e48;font-weight:600;font-size:14px}body[aria-disabled=true] #b-marker{pointer-events:none;opacity:.5}
+
+/* SYNAPSE light course palette. Shared with the upgraded regional course. */
+:root{color-scheme:light;--bg:#faf8f2;--panel:#ffffff;--ink:#203e48;--muted:#526c75;--line:#cadbd4;--a:#126d70;--b:#78579b;--gold:#a76524;--mint:#126d70;--lilac:#78579b;color:#203e48;background:#faf8f2}
+body{background:#faf8f2;color:#203e48}main{background:#faf8f2;border-color:#cadbd4}
+h1,h2,h3,summary{color:#203e48}.badge,.chip{color:#126d70;border-color:#bdd2c7;background:#edf4ef}
+.intro,.subtle,.foot,.footnote,details,.muted,.scope,.step,.paneltitle,.paneltitle span,.legend,.bottom,.phasebar,.phasebar strong,.neuron,.cards label,.controls,.controls span,.inspect span{color:#526c75}
+.world,.circuit,.network,.story section,.cards section,.card{background:#ffffff;border-color:#cadbd4}
+button,select{background:#fff;color:#203e48;border-color:#b7cdc3}button:hover{background:#edf4ef;border-color:#126d70}button[aria-pressed=true]{background:#dfede5;color:#126d70;border-color:#126d70}
+button:focus-visible,select:focus-visible,input:focus-visible,canvas:focus-visible{outline:3px solid #ae6b27;outline-offset:3px}input[type=range],progress{accent-color:#126d70}
+.story p,.pads div,.legend,.bottom,.phase,.phasebar strong,.explanation p,.explanation strong{color:#284b55}.pads div{border-color:#bacfc5}.pads div.chosen,.sensor.on{background:#dfede5;color:#0e5a60;border-color:#126d70}.sensor{color:#526c75;border-color:#c8d9d2}
+.eyebrow,.kicker,.goal{color:#126d70}.wall{color:#637678}.danger{color:#a6384e}
+.tooltip{background:#fffffff5;color:#203e48;border-color:#9ab9ac}.packet{background:#bc7d24}.positive{background:#126d70}.negative{background:#b44b66}.gain{background:#218470}.loss{background:#a74468}
+.explanation{background:#eaf3ed;border-color:#126d70}.explanation p{color:#284b55}svg text{fill:#284b55}svg .small{fill:#526c75}svg .part-fill{fill:#e5efea;stroke:#779b8d}svg .active .part-fill{fill:#b6daca;stroke:#126d70}svg .part-line{stroke:#729986}svg .active .part-line{stroke:#126d70}
+</style></head><body><main><p>EXPERIMENT SETUP · Drag B left or right. A’s signal arrival stays at 0 ms.</p>
+<svg id="axis" viewBox="0 0 900 155" aria-label="Relative timing setup">
+<path d="M100 96 H800" stroke="#35505e" stroke-width="3"/><path d="M450 24 V110" stroke="#85e0c0" stroke-width="2" stroke-dasharray="4 4"/>
+<circle cx="450" cy="36" r="8" fill="#85e0c0"/><text x="450" y="18" text-anchor="middle">A arrives · 0 ms</text>
+<text x="100" y="128">−40 ms · B earlier</text><text x="800" y="128" text-anchor="end">+40 ms · B later</text>
+<g id="b-marker" role="slider" tabindex="0" aria-label="B spike relative to A arrival, milliseconds" aria-valuemin="-40" aria-valuemax="40" aria-valuenow="10"><circle cx="0" cy="96" r="15" fill="#c4b0ff" stroke="#c4b0ff" stroke-width="2"/><text id="b-label" x="0" y="70" text-anchor="middle" style="fill:#203e48">B · +10 ms</text></g>
+</svg><p id="status" aria-live="polite">Waiting for timing settings…</p><p>Keyboard: focus B, then use ← / → (1 ms), Home (−40) or End (+40). Run the experiment below to calculate activity.</p></main><script src="editor.js"></script></body></html>

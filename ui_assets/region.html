@@ -1,0 +1,24 @@
+<!doctype html><html lang="en"><head><meta charset="utf-8"><meta name="viewport" content="width=device-width,initial-scale=1">
+<title>SYNAPSE · Anatomy and a 100-neuron experiment</title><style>__REGION_CSS__</style></head><body>
+<main>
+<header><div><div class="eyebrow">SYNAPSE / ANATOMY IN CONTEXT</div><h1 id="title">One task. Several cooperating systems.</h1></div><span id="recordingBadge" class="badge">ANATOMICAL EXPLORER</span></header>
+<p class="intro" id="intro">Explore the medical diagrams. Calculate a signal in this lesson to synchronise them with its recording.</p>
+<section class="atlas-grid">
+ <div class="plate-card"><div class="plate-head"><h2 id="surfaceTitle">Cortical surface</h2><span class="chip">01 / SURFACE</span></div><div class="plate" id="surface"></div><p class="fine" id="surfaceNote"></p></div>
+ <div class="plate-card"><div class="plate-head"><label for="deepView">Look beneath the cortex</label><select id="deepView" aria-label="Anatomical cutaway"><option value="medial">Medial section</option><option value="hippocampus">Hippocampus & amygdala</option><option value="deep">Coronal section</option></select></div><div class="plate" id="deep"></div><p class="fine" id="deepNote"></p></div>
+</section>
+<p class="fine">Anatomical plates: <a href="https://smart.servier.com/" target="_blank" rel="noopener noreferrer">Servier Medical Art</a>, <a href="https://creativecommons.org/licenses/by/4.0/" target="_blank" rel="noopener noreferrer">CC BY 4.0</a>. Interactive markers added by SYNAPSE. Halos indicate approximate locations, not region borders or activity intensity. A single hemisphere/cutaway does not imply one-sided processing.</p>
+<div class="region-pills" id="regionPills" aria-label="Explore brain structures"></div>
+<aside class="interpretation"><div class="eyebrow">BIOLOGICAL INTERPRETATION · NOT A BRAIN SCAN</div><h2 id="phaseTitle"></h2><p id="partners" class="fine"></p><p id="phaseWhy"></p><p id="phaseSources" class="fine"></p><p id="regionDetail"></p></aside>
+<section id="recordedPanel" hidden>
+ <div class="stimulus"><div><div class="eyebrow">RECORDED INPUT</div><div id="signalPreview"></div></div><p id="signalText" class="fine"></p></div>
+ <div class="stage-buttons" id="stageButtons" aria-label="Task stages"></div>
+ <div class="controls"><button id="play" type="button">Play recording</button><button id="restart" type="button">Start again</button><label for="speed">Playback <select id="speed"><option value=".5">0.5×</option><option value="1" selected>1×</option><option value="2">2×</option></select></label><label class="scrub" for="time">Recorded time <input id="time" type="range" min="0" step=".5" value="0"></label><output id="clock">0.0 ms</output></div>
+ <div class="recorded-heading"><div><div class="eyebrow">CALCULATED CIRCUIT · 100 LIF NEURONS</div><h2>Follow the signal, then inspect a cell.</h2></div><span id="decision" class="badge">Readout not reached</span></div>
+ <p class="fine">Cell positions show engineering roles. Brightness follows recorded voltage; flashes follow actual spikes. Moving dots follow transmissions processed by the engine. All weights are frozen during this recording.</p>
+ <canvas id="network" width="1200" height="490" tabindex="0" aria-label="Calculated 100-neuron circuit. Click a cell, or use arrow keys to inspect a neuron."></canvas>
+ <div class="legend"><span><i style="background:#157e86"></i>Positive current</span><span><i style="background:#b44968"></i>Inhibitory current</span><span><i style="background:#d09029"></i>Recorded transmission</span><label><input id="focusLinks" type="checkbox"> Show only selected cell’s links</label></div>
+ <div class="inspector"><div><label for="neuron">Inspect neuron</label><select id="neuron"></select><h3 id="cellRole"></h3><p id="cellExplain"></p><p id="cellStats" class="fine"></p></div><div><div class="trace-head"><strong id="voltageLabel"></strong><span class="fine">Recorded voltage · −65 to −50 mV</span></div><canvas id="trace" width="650" height="150" aria-label="Selected neuron's recorded membrane voltage and time cursor"></canvas><p id="cellCurrent" class="fine"></p></div></div>
+</section>
+<details><summary>How do the anatomy and recording relate?</summary><p id="scope"></p><p id="limits"></p><p>Quiet readout cells can still carry different subthreshold voltages. A cell is not a brain region. The highlighted structures are selected from the task explanation, not inferred from these 100 cells. Biological timing and human activity intensity cannot be read from this playback.</p></details>
+</main><script type="application/json" id="region-data">__REGION_DATA__</script><script>__REGION_CORE__</script><script>__REGION_UI__</script></body></html>
